@@ -1,0 +1,5 @@
+# robots.txt for VirtuallyKeta
+User-agent: *
+Allow: /
+
+Sitemap: https://virtually-keta.vercel.app/sitemap.xml
