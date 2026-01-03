@@ -17,217 +17,208 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script> -->
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .swiper-button-next, .swiper-button-prev { font-size: 10px !important; }
+  </style>
 </head>
 
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-  .swiper-button-next, .swiper-button-prev {
-    font-size: 10px !important;
-  }
-</style>
-
 <body class="bg-white text-gray-800 antialiased">
-
-    <!-- Header -->
-    <header class="bg-white shadow top-0 z-50">
-      <div class="max-w-screen-xl mx-auto px-4 py-4">
-        <nav class="flex items-center justify-center h-full">
-          <ul class="flex gap-6 items-center text-sm font-medium">
-            <li><a href="/index.html" class="hover:text-pink-600">Home</a></li>
-            <li><a href="/about.html" class="hover:text-pink-600">About</a></li>
-            <li><a href="#contact" class="hover:text-pink-600">Contact</a></li>
-          </ul>
-        </nav>
+  <!-- Header -->
+  <header class="bg-white shadow top-0 z-50">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-lg font-semibold text-[#264c54]">Virtually Keta</div>
+      <nav class="hidden md:flex items-center gap-8 text-base font-semibold">
+        <a href="/index.html" class="text-pink-600">Home</a>
+        <a href="/services.html" class="hover:text-pink-600">Services</a>
+      </nav>
+      <button id="mobile-menu-toggle" class="md:hidden p-2 rounded border border-gray-200 text-gray-700 hover:bg-gray-100" aria-expanded="false" aria-label="Toggle navigation">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden px-4 pb-4 hidden">
+      <div class="bg-white border border-gray-200 rounded-lg shadow">
+        <a href="/index.html" class="block px-4 py-3 text-base font-semibold text-pink-600 border-b border-gray-100">Home</a>
+        <a href="/services.html" class="block px-4 py-3 text-base font-semibold hover:text-pink-600 border-b border-gray-100">Services</a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-[#264c54] min-h-[50vh] flex items-center justify-center text-center">
-      <div class="text-white px-6 max-w-3xl mx-auto">
-          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-          Virtual Assistant<br/>at Your Service
-          </h1>
-          <p class="text-lg md:text-xl mt-4 opacity-90 whitespace-nowrap">
-            DESIGN • COPYWRITING • MARKETING
-          </p>
-          <a href="/contact.html" class="mt-8 inline-block px-6 py-3 bg-pink-600 hover:bg-pink-700 rounded text-white transition mb-10">
-            Book A Free Consultation
-          </a>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-[#264c54] text-white">
+    <div class="absolute inset-0 bg-[url('/images/herobg.webp')] bg-cover bg-center opacity-50"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-[#264c54]/90 via-[#264c54]/80 to-[#18333a]/75"></div>
+    <div class="relative max-w-screen-xl mx-auto px-6 py-16 md:py-24 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Virtual Assistant
+at Your Service</h1>
+      <p class="text-sm uppercase tracking-[0.25em] text-white/70 mb-4">DESIGN • COPYWRITING • MARKETING</p>
+    </div>
+  </section>
 
-    <!-- ABOUT (overlaps hero) -->
-    <section id="about" class="relative">
-        <!-- full-width background pattern behind the card, does NOT affect layout -->
-        <div class="absolute inset-0 bg-[url('/images/herobg.webp')] bg-cover bg-center opacity-90 pointer-events-none"></div>
-
-        <div class="relative max-w-4xl mx-auto px-0 md:px-4">
-            <!-- the card is pulled upward to overlap the hero -->
-            <div class="relative z-10 grid md:grid-cols-2 gap-8 bg-white rounded-xl shadow-xl p-8 md:p-12 -translate-y-24 md:-translate-y-16">
-                <!-- Image -->
-                <div>
-                    <img src="/images/niketa.jpg" alt="niketa" class="w-full h-auto rounded-lg shadow object-cover"/>
-                </div>
-
-                <!-- Text -->
-                <div class="flex flex-col justify-center">
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
-                      Hi, I'm Niketa,<br/>a Skilled Administrative Support Professional
-                    </h2>
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                      A dedicated Virtual Assistant passionate about helping business owners reclaim their time and focus on what truly matters. With over a decade of experience in administrative support, 
-                      I’ve developed a strong track record for streamlining processes, managing projects, and keeping things running smoothly behind the scenes. 
-                      My goal is to bring structure and clarity to your day-to-day operations while ensuring every detail is handled with care and precision.
-                    </p>
-                    <a href="/about.html"
-                    class="inline-block px-5 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded">
-                      Read More
-                    </a>
-                </div>
-            </div>
+  <!-- ABOUT (floating card) -->
+  <section id="about" class="relative">
+    <div class="absolute inset-0 bg-[url('/images/herobg.webp')] bg-cover bg-center opacity-80 pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto px-0 md:px-4">
+      <div class="relative z-10 grid md:grid-cols-2 gap-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 -translate-y-16 md:-translate-y-20">
+        <div>
+          <img src="/images/niketa.jpg" alt="Niketa" class="w-full h-auto rounded-lg shadow object-cover"/>
         </div>
-    </section>
+        <div class="flex flex-col justify-start">
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 leading-snug">Hi, I'm Niketa. I keep your operations calm and your website current.</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">With a decade of admin and project experience, I handle client communication, scheduling, and web updates so your business stays organized and responsive.</p>
+          <a href="/about.html" class="inline-block px-5 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded">Book A Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Services snapshot -->
+  <section id="services" class="bg-[#f1eee9] py-16 px-6">
+    <div class="max-w-screen-xl mx-auto text-center mb-12 opacity-0 translate-y-6" data-animate>
+      <p class="text-sm uppercase tracking-[0.25em] text-[#d99882] mb-3">What I do</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-3">What can I do for you?</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto">A mix of virtual assistance, coordination, and web care so you can move faster without hiring a full team.</p>
+    </div>
 
-    <!-- Services -->
-    <section id="services" class="bg-gray-50 pb-20 px-6" style="background-image: url('/images/herobg.webp'); background-size: cover; background-position: center;">
-      <div class="max-w-screen-xl mx-auto text-center mb-16 opacity-0 translate-y-8" data-animate>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">What Can I Do For You?</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-          I provide a range of professional services to help you stay organized and grow your business.
-          </p>
+    <div class="max-w-screen-xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white border border-gray-100 shadow-sm rounded-2xl p-8 hover:shadow-md transition opacity-0 translate-y-6" data-animate>
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-xl mb-4 mx-auto">
+          <i class="fa-regular fa-envelope-open"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Client Communication</h3>
+        <p class="text-sm text-gray-700">Inbox triage, replies, scheduling, and reminders with a polished, on-brand tone.</p>
       </div>
 
-      <!-- Grid -->
-      <div class="max-w-screen-xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card -->
-          <div class="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition opacity-0 translate-y-8" data-animate>
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-2xl mb-4 mx-auto">
-                <i class="fa-regular fa-folder-open"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Administrative Support</h3>
-            <p class="text-sm text-gray-600">
-                Help with scheduling, organization, and documentation to keep your business running smoothly.
-            </p>
-          </div>
-
-          <!-- Card -->
-          <div class="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition opacity-0 translate-y-8" data-animate>
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-2xl mb-4 mx-auto">
-                <i class="fa-regular fa-comments"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Customer Support</h3>
-            <p class="text-sm text-gray-600">
-                Friendly and reliable support for your clients, helping to manage inquiries and communication.
-            </p>
-          </div>
-
-          <!-- Card -->
-          <div class="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition opacity-0 translate-y-8" data-animate>
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-2xl mb-4 mx-auto">
-                <i class="fa-regular fa-calendar"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Project Management</h3>
-            <p class="text-sm text-gray-600">
-                Overseeing tasks and deadlines so your projects stay on track and stress-free.
-            </p>
-          </div>
-
-          <!-- More cards (Social Media, Research, Personal Assistant) -->
-          <div class="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition opacity-0 translate-y-8" data-animate>
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-2xl mb-4 mx-auto">
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Social Media Management</h3>
-            <p class="text-sm text-gray-600">
-                Content scheduling, engagement, and analytics to grow your online presence.
-            </p>
-          </div>
-
-          <div class="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition opacity-0 translate-y-8" data-animate>
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-2xl mb-4 mx-auto">
-                <i class="fa-regular fa-file-lines"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Data & Research</h3>
-            <p class="text-sm text-gray-600">
-                Gathering insights, preparing reports, and analyzing data to support your decisions.
-            </p>
-          </div>
-
-          <div class="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition opacity-0 translate-y-8" data-animate>
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-2xl mb-4 mx-auto">
-                <i class="fa-regular fa-user"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Personal Assistant</h3>
-            <p class="text-sm text-gray-600">
-                Everyday tasks, reminders, and organization so you can focus on what matters most.
-            </p>
-          </div>
+      <div class="bg-white border border-gray-100 shadow-sm rounded-2xl p-8 hover:shadow-md transition opacity-0 translate-y-6" data-animate>
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-xl mb-4 mx-auto">
+          <i class="fa-regular fa-comments"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Customer Support</h3>
+        <p class="text-sm text-gray-700">Friendly client care, FAQ responses, and issue tracking so no message is missed.</p>
       </div>
-    </section>
 
+      <div class="bg-white border border-gray-100 shadow-sm rounded-2xl p-8 hover:shadow-md transition opacity-0 translate-y-6" data-animate>
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-xl mb-4 mx-auto">
+          <i class="fa-regular fa-calendar"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Coordination</h3>
+        <p class="text-sm text-gray-700">Task boards, follow-ups, timelines, and clear meeting notes that turn into action.</p>
+      </div>
+
+      <div class="bg-white border border-gray-100 shadow-sm rounded-2xl p-8 hover:shadow-md transition opacity-0 translate-y-6" data-animate>
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-xl mb-4 mx-auto">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Social Media</h3>
+        <p class="text-sm text-gray-700">Scheduling, engagement, and light design to keep your channels active and on-brand.</p>
+      </div>
+
+      <div class="bg-white border border-gray-100 shadow-sm rounded-2xl p-8 hover:shadow-md transition opacity-0 translate-y-6" data-animate>
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-xl mb-4 mx-auto">
+          <i class="fa-regular fa-file-lines"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Research & Reporting</h3>
+        <p class="text-sm text-gray-700">Data pulls, light analysis, and simple dashboards for quick decision-making.</p>
+      </div>
+
+      <div class="bg-white border border-gray-100 shadow-sm rounded-2xl p-8 hover:shadow-md transition opacity-0 translate-y-6" data-animate>
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white text-xl mb-4 mx-auto">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Website Care</h3>
+        <p class="text-sm text-gray-700">New pages, landing tweaks, form fixes, and performance polish to keep your site booking the right clients.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 opacity-0 translate-y-6" data-animate>
+      <a href="/services.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#264c54] hover:bg-[#1f3a44] text-white rounded font-semibold transition">View full services <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+  </section>
 
   <!-- Testimonials -->
-  <section class="bg-[#264c54] py-20">
-    <div class="max-w-screen-xl mx-auto text-center px-4">
-      <h2 class="text-3xl font-bold text-white mb-10">What My Clients Say</h2>
+  <section class="bg-white py-16 px-6">
+    <div class="max-w-screen-xl mx-auto text-center mb-10 opacity-0 translate-y-6" data-animate>
+      <p class="text-sm uppercase tracking-[0.25em] text-[#264c54] mb-3">Testimonials</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-3">What my clients say</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto">Partnership-focused support that feels like an extension of your team.</p>
+    </div>
 
-      <!-- Swiper container -->
+    <div class="max-w-screen-xl mx-auto px-2">
       <div class="testimonial-swiper swiper relative pb-10">
         <div class="swiper-wrapper">
           <div class="swiper-slide flex">
-            <div class="bg-white shadow-md p-8 text-center rounded-lg w-full">
-              <div class="text-[#d99882] text-4xl mb-4">❝</div>
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Organized and Efficient</h3>
-              <p class="text-gray-600 mb-4">“I'm a testimonial. Click to edit me and add text.”</p>
+            <div class="bg-[#f1eee9] shadow-md p-8 text-left rounded-lg w-full">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Organized and proactive</h3>
+              <p class="text-gray-700 mb-4">
+                <span class="text-[#d99882] text-3xl align-baseline leading-none mr-2">“</span>
+                <span class="align-baseline">Niketa keeps our inbox, schedules, and deliverables under control. We move faster and miss fewer details.</span>
+                <span class="text-[#d99882] text-3xl align-baseline leading-none ml-2">”</span>
+              </p>
               <p class="font-bold text-gray-900">Jen B.</p>
             </div>
           </div>
 
           <div class="swiper-slide flex">
-            <div class="bg-white shadow-md p-8 text-center rounded-lg w-full">
-              <div class="text-[#d99882] text-4xl mb-4">❝</div>
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Flexible and Committed</h3>
-              <p class="text-gray-600 mb-4">“Always reliable, quick to adapt, and dedicated to results.”</p>
+            <div class="bg-[#f1eee9] shadow-md p-8 text-left rounded-lg w-full">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Flexible and committed</h3>
+              <p class="text-gray-700 mb-4">
+                <span class="text-[#d99882] text-3xl align-baseline leading-none mr-2">“</span>
+                <span class="align-baseline">Always reliable, quick to adapt, and dedicated to results. A true partner for our team.</span>
+                <span class="text-[#d99882] text-3xl align-baseline leading-none ml-2">”</span>
+              </p>
               <p class="font-bold text-gray-900">Louis M.</p>
             </div>
           </div>
 
           <div class="swiper-slide flex">
-            <div class="bg-white shadow-md p-8 text-center rounded-lg w-full">
-              <div class="text-[#d99882] text-4xl mb-4">❝</div>
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Creative & Resourceful</h3>
-              <p class="text-gray-600 mb-4">“Always comes up with fresh solutions and ideas.”</p>
+            <div class="bg-[#f1eee9] shadow-md p-8 text-left rounded-lg w-full">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Creative and resourceful</h3>
+              <p class="text-gray-700 mb-4">
+                <span class="text-[#d99882] text-3xl align-baseline leading-none mr-2">“</span>
+                <span class="align-baseline">From client communication to website tweaks, she finds better ways to get things done.</span>
+                <span class="text-[#d99882] text-3xl align-baseline leading-none ml-2">”</span>
+              </p>
               <p class="font-bold text-gray-900">Karen L.</p>
             </div>
           </div>
 
-          <div class="swiper-slide flex">
-            <div class="bg-white shadow-md p-8 text-center rounded-lg w-full">
-              <div class="text-[#d99882] text-4xl mb-4">❝</div>
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Creative & Resourceful</h3>
-              <p class="text-gray-600 mb-4">“Always comes up with fresh solutions and ideas.”</p>
+                    <div class="swiper-slide flex">
+            <div class="bg-[#f1eee9] shadow-md p-8 text-left rounded-lg w-full">
+              <div class="text-[#d99882] text-4xl mb-4">“</div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Creative and resourceful</h3>
+              <p class="text-gray-700 mb-4">“From client communication to website tweaks, she finds better ways to get things done.</p>
               <p class="font-bold text-gray-900">Karen L.</p>
             </div>
           </div>
 
-          <div class="swiper-slide flex">
-            <div class="bg-white shadow-md p-8 text-center rounded-lg w-full">
-              <div class="text-[#d99882] text-4xl mb-4">❝</div>
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Creative & Resourceful</h3>
-              <p class="text-gray-600 mb-4">“Always comes up with fresh solutions and ideas.”</p>
+                    <div class="swiper-slide flex">
+            <div class="bg-[#f1eee9] shadow-md p-8 text-left rounded-lg w-full">
+              <div class="text-[#d99882] text-4xl mb-4">“</div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Creative and resourceful</h3>
+              <p class="text-gray-700 mb-4">“From client communication to website tweaks, she finds better ways to get things done.”</p>
+              <p class="font-bold text-gray-900">Karen L.</p>
+            </div>
+          </div>
+
+                    <div class="swiper-slide flex">
+            <div class="bg-[#f1eee9] shadow-md p-8 text-left rounded-lg w-full">
+              <div class="text-[#d99882] text-4xl mb-4">“</div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Creative and resourceful</h3>
+              <p class="text-gray-700 mb-4">“From client communication to website tweaks, she finds better ways to get things done.”</p>
               <p class="font-bold text-gray-900">Karen L.</p>
             </div>
           </div>
         </div>
 
-        <!-- Navigation Buttons -->
         <button class="custom-swiper-prev absolute top-1/2 -translate-y-1/2 left-0 z-10 bg-white text-[#264c54] text-4xl w-10 h-10 flex items-center justify-center rounded-full shadow hover:bg-gray-100">
           <span class="block mt-[-4px] leading-none">&lsaquo;</span>
         </button>
@@ -242,13 +233,13 @@
   <footer id="contact" class="bg-gray-800 text-white py-8" style="background-color: #1d2534;">
     <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
       <div class="flex space-x-6">
-        <a href="https://linkedin.com" target="_blank" 
-          class="text-white hover:text-[#d99882] transition-colors" 
+        <a href="https://linkedin.com" target="_blank"
+          class="text-white hover:text-[#d99882] transition-colors"
           aria-label="LinkedIn">
           <i class="fab fa-linkedin text-2xl"></i>
         </a>
       </div>
-      <p class="text-sm mt-4 md:mt-0">© 2025 Virtually Keta</p>
+      <p class="text-sm mt-4 md:mt-0">(c) 2025 Virtually Keta</p>
     </div>
   </footer>
 
@@ -260,19 +251,41 @@
       slidesPerView: 1,
       spaceBetween: 30,
       breakpoints: {768:{slidesPerView:2},1024:{slidesPerView:3}},
-      autoplay: { delay: 4000, disableOnInteraction: false },
+      autoplay: { delay: 4500, disableOnInteraction: false },
       navigation: { nextEl: '.custom-swiper-next', prevEl: '.custom-swiper-prev' },
     });
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("mobile-menu-toggle");
+      const menu = document.getElementById("mobile-menu");
+      const iconMenu = document.getElementById("icon-menu");
+      const iconClose = document.getElementById("icon-close");
+
+      if (toggle && menu && iconMenu && iconClose) {
+        const handleToggle = () => {
+          menu.classList.toggle("hidden");
+          const open = !menu.classList.contains("hidden");
+          iconMenu.classList.toggle("hidden", open);
+          iconClose.classList.toggle("hidden", !open);
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        };
+
+        toggle.addEventListener("click", handleToggle);
+        menu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            if (!menu.classList.contains("hidden")) handleToggle();
+          });
+        });
+      }
+
       const animatedItems = document.querySelectorAll("[data-animate]");
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-700", "ease-out");
-            entry.target.classList.remove("opacity-0", "translate-y-8");
+            entry.target.classList.remove("opacity-0", "translate-y-6");
             observer.unobserve(entry.target);
           }
         });
