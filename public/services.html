@@ -58,14 +58,13 @@
 
   <!-- Hero -->
   <section class="relative bg-[#264c54] text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/images/herobg.webp')] bg-cover bg-center opacity-50"></div>
+    <div class="absolute inset-0 bg-[url('/images/herobg.webp')] bg-cover bg-center "></div>
     <div class="absolute inset-0 bg-gradient-to-br from-[#264c54]/90 via-[#264c54]/80 to-[#18333a]/70"></div>
     <div class="relative max-w-screen-xl mx-auto px-6 py-20 text-center">
-      <p class="text-sm uppercase tracking-[0.25em] text-white/70 mb-4">Service Packages</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Virtual Support and Web Builds<br class="hidden md:block" />done-for-you</h1>
-      <p class="max-w-3xl mx-auto text-white/80 text-lg">Pick the package that matches your workload, or combine virtual assistance with website upgrades so your operations and online presence move together.</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Service Packages</h1>
+      <p class="max-w-3xl mx-auto text-white/80 text-lg">Pick the package that matches your workload, ranging from virtual assistance to full website builds.</p>
       <div class="flex flex-wrap justify-center gap-4 mt-8">
-        <span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">Monthly retainers</span>
+        <span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">Clear deliverables</span>
         <span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">Project-based builds</span>
         <span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">Clear deliverables</span>
       </div>
@@ -96,7 +95,7 @@
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#d99882] mt-1"></i><span>Weekly progress recap and next priorities.</span></li>
           </ul>
           <div class="mt-auto pt-4">
-            <p class="text-lg font-semibold text-gray-900">From $350 / month</p>
+            <p class="text-lg font-semibold text-gray-900">From £625 / month</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBG7vmRo18BPlLdA3RtPiCazU8v3J6Y0yadw6gAVdhskvMlg/viewform?usp=pp_url&entry.383508466=Essential+Support" class="mt-3 inline-block w-full text-center px-4 py-2 rounded-md border border-[#d99882] text-[#d99882] hover:bg-[#d99882] hover:text-white transition">Choose Essential</a>
           </div>
         </div>
@@ -147,7 +146,7 @@
       <div class="text-center mb-12 opacity-0 translate-y-6" data-animate>
         <p class="text-sm uppercase tracking-[0.25em] text-[#264c54] mb-3">Web Development</p>
         <h2 class="text-3xl font-bold text-gray-900 mb-3">Web Development Packages</h2>
-        <p class="text-gray-700 max-w-3xl mx-auto">Modern, responsive sites that match your brand and make it easy for clients to work with you. Each build includes launch support and a quick Loom walkthrough.</p>
+        <p class="text-gray-700 max-w-3xl mx-auto">Modern, responsive sites that match your brand and make it easy for clients to work with you. Each build includes launch support and a walkthrough.</p>
       </div>
 
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -163,8 +162,61 @@
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#264c54] mt-1"></i><span>Mobile-first layout with brand colors and typography.</span></li>
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#264c54] mt-1"></i><span>Basic on-page SEO and analytics setup.</span></li>
           </ul>
+          <div class="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
+            <div class="flex items-center justify-between gap-3">
+              <p class="font-semibold text-gray-900">Ongoing support</p>
+              <span class="px-3 py-1 rounded-full bg-[#264c54]/10 text-[#264c54] text-xs font-semibold whitespace-nowrap">
+                Peace of mind
+              </span>
+            </div>
+
+            <p class="mt-1">
+              Recommended: <strong>Essential Care</strong> (updates + 1hr/month).
+            </p>
+
+            <button
+              type="button"
+              class="mt-2 inline-flex items-center gap-2 text-xs font-semibold text-[#264c54] hover:underline"
+              data-toggle="care-details"
+              aria-expanded="false"
+              aria-controls="care-details-launchpad"
+            >
+              <span data-toggle-label>Read more</span>
+              <i class="fa-solid fa-chevron-down text-[10px]" data-toggle-icon></i>
+            </button>
+
+            <div id="care-details-launchpad" class="mt-3 hidden">
+              <div class="rounded-lg border border-gray-100 bg-white p-4">
+                <p class="text-sm font-semibold text-gray-900">Essential Care</p>
+                <p class="text-xs text-gray-600 mt-1">
+                  Best for brochure sites that need updates, backups, and occasional small changes.
+                </p>
+
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Updates, security checks, uptime monitoring, and backups.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Up to <strong>1 hour/month</strong> for small edits (text, images, minor tweaks).</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Email support and priority bug fixes.</span>
+                  </li>
+                </ul>
+
+                <div class="mt-4 pt-3 border-t border-gray-100">
+                  <p class="text-sm font-semibold text-gray-900">From £140 / month</p>
+                  <p class="text-xs text-gray-500 mt-1">Extra hours available at your standard rate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="mt-auto pt-4">
-            <p class="text-lg font-semibold text-gray-900">From $900 / project</p>
+            <p class="text-lg font-semibold text-gray-900">From £600 / project</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBG7vmRo18BPlLdA3RtPiCazU8v3J6Y0yadw6gAVdhskvMlg/viewform?usp=pp_url&entry.383508466=Launchpad+Site" class="mt-3 inline-block w-full text-center px-4 py-2 rounded-md border border-[#d99882] text-[#d99882] hover:bg-[#d99882] hover:text-white transition">Start Launchpad</a>
           </div>
         </div>
@@ -182,8 +234,61 @@
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#264c54] mt-1"></i><span>Blog or updates section with simple CMS workflow.</span></li>
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#264c54] mt-1"></i><span>Performance tuning and accessibility check.</span></li>
           </ul>
+          <div class="rounded-xl border border-[#d99882]/30 bg-[#d99882]/10 p-4 text-sm text-gray-700">
+            <div class="flex items-center justify-between gap-3">
+              <p class="font-semibold text-gray-900">Ongoing support</p>
+              <span class="px-3 py-1 rounded-full bg-white/70 text-[#d99882] text-xs font-semibold whitespace-nowrap border border-[#d99882]/30">
+                Monthly improvements
+              </span>
+            </div>
+
+            <p class="mt-1">
+              Recommended: <strong>Growth Support</strong> (updates + 4hrs/month).
+            </p>
+
+            <button
+              type="button"
+              class="mt-2 inline-flex items-center gap-2 text-xs font-semibold text-[#264c54] hover:underline"
+              data-toggle="care-details"
+              aria-expanded="false"
+              aria-controls="care-details-brand"
+            >
+              <span data-toggle-label>Read more</span>
+              <i class="fa-solid fa-chevron-down text-[10px]" data-toggle-icon></i>
+            </button>
+
+            <div id="care-details-brand" class="mt-3 hidden">
+              <div class="rounded-lg border border-[#d99882]/30 bg-white p-4">
+                <p class="text-sm font-semibold text-gray-900">Growth Support</p>
+                <p class="text-xs text-gray-600 mt-1">
+                  For growing brands that want regular content updates and proactive optimisation.
+                </p>
+
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Everything in Essential Care (updates, monitoring, backups).</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Up to <strong>4 hours/month</strong> for edits, new sections, and content updates.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Monthly performance + SEO check with a quick summary.</span>
+                  </li>
+                </ul>
+
+                <div class="mt-4 pt-3 border-t border-gray-100">
+                  <p class="text-sm font-semibold text-gray-900">From £350 / month</p>
+                  <p class="text-xs text-gray-500 mt-1">Extra hours available at your standard rate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="mt-auto pt-4">
-            <p class="text-lg font-semibold text-gray-900">From $1600 / project</p>
+            <p class="text-lg font-semibold text-gray-900">From £900 / project</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBG7vmRo18BPlLdA3RtPiCazU8v3J6Y0yadw6gAVdhskvMlg/viewform?usp=pp_url&entry.383508466=Brand+Builder" class="mt-3 inline-block w-full text-center px-4 py-2 rounded-md bg-pink-600 hover:bg-pink-700 text-white transition">Plan Brand Builder</a>
           </div>
         </div>
@@ -200,8 +305,61 @@
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#264c54] mt-1"></i><span>Integration with email CRM, booking tools, and automations.</span></li>
             <li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#264c54] mt-1"></i><span>Performance, SEO, and analytics dashboards.</span></li>
           </ul>
+          <div class="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
+            <div class="flex items-center justify-between gap-3">
+              <p class="font-semibold text-gray-900">Ongoing support</p>
+              <span class="px-3 py-1 rounded-full bg-[#264c54]/10 text-[#264c54] text-xs font-semibold whitespace-nowrap">
+                Conversion focused
+              </span>
+            </div>
+
+            <p class="mt-1">
+              Recommended: <strong>Conversion &amp; Optimisation</strong> (testing + 8hrs/month).
+            </p>
+
+            <button
+              type="button"
+              class="mt-2 inline-flex items-center gap-2 text-xs font-semibold text-[#264c54] hover:underline"
+              data-toggle="care-details"
+              aria-expanded="false"
+              aria-controls="care-details-conversion"
+            >
+              <span data-toggle-label>Read more</span>
+              <i class="fa-solid fa-chevron-down text-[10px]" data-toggle-icon></i>
+            </button>
+
+            <div id="care-details-conversion" class="mt-3 hidden">
+              <div class="rounded-lg border border-gray-100 bg-white p-4">
+                <p class="text-sm font-semibold text-gray-900">Conversion &amp; Optimisation</p>
+                <p class="text-xs text-gray-600 mt-1">
+                  For campaigns, landing pages, and ongoing testing to increase bookings and signups.
+                </p>
+
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Everything in Growth Support (updates, SEO checks, content changes).</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>Up to <strong>8 hours/month</strong> for landing page iterations and experiments.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-[#264c54] mt-1"></i>
+                    <span>A/B test planning, analytics review, and conversion recommendations.</span>
+                  </li>
+                </ul>
+
+                <div class="mt-4 pt-3 border-t border-gray-100">
+                  <p class="text-sm font-semibold text-gray-900">From £650 / month</p>
+                  <p class="text-xs text-gray-500 mt-1">Extra hours available at your standard rate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="mt-auto pt-4">
-            <p class="text-lg font-semibold text-gray-900">From $2200 / project</p>
+            <p class="text-lg font-semibold text-gray-900">From £1600 / project</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBG7vmRo18BPlLdA3RtPiCazU8v3J6Y0yadw6gAVdhskvMlg/viewform?usp=pp_url&entry.383508466=Conversion+Engine" class="mt-3 inline-block w-full text-center px-4 py-2 rounded-md border border-[#264c54] text-[#264c54] hover:bg-[#264c54] hover:text-white transition">Discuss Conversion</a>
           </div>
         </div>
@@ -276,8 +434,10 @@
   <section id="contact" class="bg-[#f1eee9] py-16 px-6 text-center">
     <div class="max-w-screen-md mx-auto opacity-0 translate-y-6" data-animate>
       <h3 class="text-3xl font-bold text-gray-900 mb-4">Ready to pick a package?</h3>
-      <p class="text-gray-700 mb-6">Tell me what you need help with and I will reply within one business day with a quick plan.</p>
+      <p class="text-gray-700 mb-6">Tell me what you need help with and I’ll reply within one business day with a suggested package or a custom plan.</p>
       <a href="mailto:hello@virtuallyketa.com" class="inline-block px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded transition">Email Niketa</a>
+<a href="https://calendly.com/niketalucycheney/30min" class="inline-block px-6 py-3 rounded-md bg-white text-[#264c54] font-semibold hover:bg-gray-100 transition">Schedule a call</a>
+
     </div>
   </section>
 
@@ -332,5 +492,33 @@
       animatedItems.forEach(item => observer.observe(item));
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('[data-toggle="care-details"]').forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const panelId = btn.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+
+          if (!panel) return;
+
+          const label = btn.querySelector("[data-toggle-label]");
+          const icon = btn.querySelector("[data-toggle-icon]");
+
+          const isOpen = !panel.classList.contains("hidden");
+
+          panel.classList.toggle("hidden", isOpen);
+          btn.setAttribute("aria-expanded", String(!isOpen));
+
+          if (label) label.textContent = isOpen ? "Read more" : "Read less";
+
+          if (icon) {
+            icon.classList.toggle("fa-chevron-down", isOpen);
+            icon.classList.toggle("fa-chevron-up", !isOpen);
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
