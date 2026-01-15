@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://virtually-keta.vercel.app/sitemap.xml
+Sitemap: https://www.virtuallyketa.co.uk/sitemap.xml
