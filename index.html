@@ -35,15 +35,6 @@
   </style>
 </head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9PG1M7LX4G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9PG1M7LX4G');
-</script>
-
 <body class="bg-white text-gray-800 antialiased">
   <!-- Header -->
   <header class="bg-white shadow top-0 z-50">
@@ -223,16 +214,48 @@
   </section>
 
   <!-- Footer -->
-  <footer id="contact" class="bg-gray-800 text-white py-8" style="background-color: #1d2534;">
-    <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-      <div class="flex space-x-6">
-        <a href="https://uk.linkedin.com/in/niketa-cheney-695779174" target="_blank"
-          class="text-white hover:text-[#d99882] transition-colors"
-          aria-label="LinkedIn">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
+  <div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-50 hidden">
+    <div class="max-w-screen-xl mx-auto px-4 pb-6">
+      <div class="bg-white text-gray-800 border border-gray-200 shadow-lg rounded-xl p-4 md:p-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <p class="text-sm text-gray-700">
+          We use cookies to enable Google Analytics only. You can read more in our
+          <a href="/cookie-policy.html" class="text-[#264c54] hover:text-pink-600">Cookie Policy</a>.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button id="cookie-accept" class="px-4 py-2 rounded-md bg-[#264c54] text-white text-sm font-semibold hover:bg-[#1f3a44] transition">Accept</button>
+          <button id="cookie-decline" class="px-4 py-2 rounded-md border border-gray-300 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition">Decline</button>
+        </div>
       </div>
-      <p class="text-sm mt-4 md:mt-0">(c) 2026 Virtually Keta</p>
+    </div>
+  </div>
+  <footer id="contact" class="bg-gray-800 text-white py-10" style="background-color: #1d2534;">
+    <div class="max-w-screen-xl mx-auto px-4 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-white/90">
+          <a href="/privacy-policy.html" class="hover:text-[#d99882] transition-colors">Privacy Policy</a>
+          <span class="px-2 text-white/40">|</span>
+          <a href="/cookie-policy.html" class="hover:text-[#d99882] transition-colors">Cookie Policy</a>
+          <span class="px-2 text-white/40">|</span>
+          <a href="/terms-and-conditions.html" class="hover:text-[#d99882] transition-colors">Terms &amp; Conditions</a>
+          <span class="px-2 text-white/40">|</span>
+          <a href="mailto:niketa@virtuallyketa.co.uk" class="hover:text-[#d99882] transition-colors">Contact</a>
+        </div>
+        <div class="text-sm text-white/70 text-center md:text-left">
+          <p class="font-semibold text-white">VirtuallyKeta</p>
+          <p>Niketa Cheney</p>
+          <a href="mailto:niketa@virtuallyketa.co.uk" class="hover:text-[#d99882] transition-colors">Email: Niketa@virtuallyketa.co.uk</a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-4">
+        <div class="flex space-x-6">
+          <a href="https://uk.linkedin.com/in/niketa-cheney-695779174" target="_blank"
+            class="text-white hover:text-[#d99882] transition-colors"
+            aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+        <p class="text-xs text-white/60">(c) 2026 Virtually Keta</p>
+      </div>
     </div>
   </footer>
 
@@ -411,6 +434,50 @@ document.addEventListener("DOMContentLoaded", () => {
     observeAnimatedItems(servicesContainer);
   }
 });
+</script>
+<script>
+  const COOKIE_KEY = "vk_cookie_consent";
+  const cookieBanner = document.getElementById("cookie-banner");
+  const cookieAccept = document.getElementById("cookie-accept");
+  const cookieDecline = document.getElementById("cookie-decline");
+
+  const loadAnalytics = () => {
+    if (window.__vkAnalyticsLoaded) return;
+    window.__vkAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-9PG1M7LX4G');
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PG1M7LX4G';
+    document.head.appendChild(script);
+  };
+
+  const consent = localStorage.getItem(COOKIE_KEY);
+  if (consent === "accepted") {
+    loadAnalytics();
+  }
+
+  if (!consent && cookieBanner) {
+    cookieBanner.classList.remove("hidden");
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener("click", () => {
+      localStorage.setItem(COOKIE_KEY, "accepted");
+      cookieBanner.classList.add("hidden");
+      loadAnalytics();
+    });
+  }
+
+  if (cookieDecline) {
+    cookieDecline.addEventListener("click", () => {
+      localStorage.setItem(COOKIE_KEY, "declined");
+      cookieBanner.classList.add("hidden");
+    });
+  }
 </script>
 </body>
 </html>
