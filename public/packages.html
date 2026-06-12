@@ -171,7 +171,7 @@
 
 
           <div class="mt-auto pt-4">
-            <p class="text-lg font-semibold text-gray-900">From £400 / project</p>
+            <p class="text-lg font-semibold text-gray-900">From £300 / project</p>
           </div>
         </div>
 
@@ -202,7 +202,7 @@
           </div>
 
           <div class="mt-auto pt-4">
-            <p class="text-lg font-semibold text-gray-900">From £600 / project</p>
+            <p class="text-lg font-semibold text-gray-900">From £550 / project</p>
           </div>
         </div>
 
@@ -242,9 +242,9 @@
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <p class="text-sm uppercase tracking-[0.25em] text-white/70 mb-2">Ongoing support</p>
-            <h3 class="text-2xl font-bold">Ongoing Website Support</h3>
+            <h3 class="text-2xl font-bold">Ongoing Website Support / Existing Site Maintenance</h3>
             <p class="text-white/80 mt-2 max-w-2xl">
-              A single monthly plan available for any website package - keeping your site secure, updated, and improving over time.
+              A single monthly plan available for any package or existing site you have with the aim to keeping your site secure, updated, and improving over time.
             </p>
           </div>
 
@@ -363,14 +363,14 @@
   <!-- Footer -->
   <div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-50 hidden">
     <div class="max-w-screen-xl mx-auto px-4 pb-6">
-      <div class="bg-white text-gray-800 border border-gray-200 shadow-lg rounded-xl p-4 md:p-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p class="text-sm text-gray-700">
-          We use cookies to enable Google Analytics only. You can read more in our
+      <div class="bg-white text-gray-800 border border-gray-200 shadow-lg rounded-xl p-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-sm text-gray-700 sm:flex-1">
+          Optional Google Analytics cookies help us understand site visits. Choose Accept or Decline; change anytime in our
           <a href="/cookie-policy.html" class="text-[#264c54] hover:text-pink-600">Cookie Policy</a>.
         </p>
-        <div class="flex flex-wrap gap-3">
-          <button id="cookie-accept" class="px-4 py-2 rounded-md bg-[#264c54] text-white text-sm font-semibold hover:bg-[#1f3a44] transition">Accept</button>
-          <button id="cookie-decline" class="px-4 py-2 rounded-md border border-gray-300 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition">Decline</button>
+        <div class="flex flex-row gap-2 sm:shrink-0">
+          <button id="cookie-accept" aria-label="Accept analytics cookies" class="px-4 py-2 rounded-md border border-[#264c54] bg-[#264c54] text-white text-sm font-semibold hover:bg-[#1f3a44] transition whitespace-nowrap">Accept</button>
+          <button id="cookie-decline" aria-label="Decline analytics cookies" class="px-4 py-2 rounded-md border border-[#264c54] text-sm font-semibold text-[#264c54] hover:bg-[#264c54]/10 transition whitespace-nowrap">Decline</button>
         </div>
       </div>
     </div>
@@ -382,6 +382,8 @@
           <a href="/privacy-policy.html" class="hover:text-[#d99882] transition-colors">Privacy Policy</a>
           <span class="px-2 text-white/40">|</span>
           <a href="/cookie-policy.html" class="hover:text-[#d99882] transition-colors">Cookie Policy</a>
+          <span class="px-2 text-white/40">|</span>
+          <button type="button" data-cookie-settings class="hover:text-[#d99882] transition-colors">Cookie Settings</button>
           <span class="px-2 text-white/40">|</span>
           <a href="/terms-and-conditions.html" class="hover:text-[#d99882] transition-colors">Terms &amp; Conditions</a>
           <span class="px-2 text-white/40">|</span>
@@ -472,37 +474,68 @@
   </script>
   <script>
     const COOKIE_KEY = "vk_cookie_consent";
+    const ANALYTICS_ID = "G-9PG1M7LX4G";
+    const ANALYTICS_COOKIE_NAMES = ["_ga", "_ga_9PG1M7LX4G"];
     const cookieBanner = document.getElementById("cookie-banner");
     const cookieAccept = document.getElementById("cookie-accept");
     const cookieDecline = document.getElementById("cookie-decline");
 
+    const showCookieBanner = () => {
+      if (cookieBanner) cookieBanner.classList.remove("hidden");
+    };
+
+    const hideCookieBanner = () => {
+      if (cookieBanner) cookieBanner.classList.add("hidden");
+    };
+
+    const expireCookie = (name, domain) => {
+      document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax${domain ? `; domain=${domain}` : ""}`;
+    };
+
+    const deleteAnalyticsCookies = () => {
+      const host = window.location.hostname;
+      const baseHost = host.replace(/^www\./, "");
+      const domains = Array.from(new Set(["", host, `.${host}`, baseHost, `.${baseHost}`])).filter(Boolean);
+
+      ANALYTICS_COOKIE_NAMES.forEach((name) => {
+        expireCookie(name);
+        domains.forEach((domain) => expireCookie(name, domain));
+      });
+    };
+
+    const disableAnalytics = () => {
+      window[`ga-disable-${ANALYTICS_ID}`] = true;
+      deleteAnalyticsCookies();
+    };
+
     const loadAnalytics = () => {
       if (window.__vkAnalyticsLoaded) return;
+      window[`ga-disable-${ANALYTICS_ID}`] = false;
       window.__vkAnalyticsLoaded = true;
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-9PG1M7LX4G');
-      const script = document.createElement('script');
+      gtag("js", new Date());
+      gtag("config", ANALYTICS_ID);
+      const script = document.createElement("script");
       script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PG1M7LX4G';
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`;
       document.head.appendChild(script);
     };
 
     const consent = localStorage.getItem(COOKIE_KEY);
     if (consent === "accepted") {
       loadAnalytics();
-    }
-
-    if (!consent && cookieBanner) {
-      cookieBanner.classList.remove("hidden");
+    } else if (consent === "declined") {
+      disableAnalytics();
+    } else {
+      showCookieBanner();
     }
 
     if (cookieAccept) {
       cookieAccept.addEventListener("click", () => {
         localStorage.setItem(COOKIE_KEY, "accepted");
-        cookieBanner.classList.add("hidden");
+        hideCookieBanner();
         loadAnalytics();
       });
     }
@@ -510,9 +543,14 @@
     if (cookieDecline) {
       cookieDecline.addEventListener("click", () => {
         localStorage.setItem(COOKIE_KEY, "declined");
-        cookieBanner.classList.add("hidden");
+        disableAnalytics();
+        hideCookieBanner();
       });
     }
+
+    document.querySelectorAll("[data-cookie-settings]").forEach((button) => {
+      button.addEventListener("click", showCookieBanner);
+    });
   </script>
 
 </body>
